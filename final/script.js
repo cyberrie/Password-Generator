@@ -88,30 +88,59 @@ var upperCasedCharacters = [
   "Z",
 ];
 
-// Function to prompt user for password options
-function getPasswordOptions() {}
+// FUNCTION TO PROMPT USER FOR PASSWORD OPTIONS
 
-// Function for getting a random element from an array
+// define an object containing all password parameters
+const passwordParameters = {
+  characters: {
+    hasNum: true,
+    hasUpperCase: true,
+    hasLowerCase: true,
+    hasSymbol: true,
+  },
+};
+
+let passwordLen;
+
+function getPasswordOptions() {
+  if ((passwordParameters = true && passwordLen >= 10 && passwordLen <= 64)) {
+    generatePassword();
+  } else {
+    console.log(
+      "Your password has to have at least one type of each: number, special character, upper case and lower case. Please try again"
+    );
+  }
+}
+
+// FUNCTION FOR GETTING A RANDOM ELEMENT FROM AN ARRAY
 function getRandom(arr) {
   // concatenate all arrays
-  let possibleCharacters = specialCharacters.concat(
+  let allCharacters = specialCharacters.concat(
     numericCharacters,
     lowerCasedCharacters,
     upperCasedCharacters
   );
-  let password = "";
-
   // iterating through all arrays and getting a random element from all arrays
-  for (let i = 0; i < possibleCharacters.length; i++) {
-    password += possibleCharacters.charAt(
-      Math.floor(Math.random() * possibleCharacters.length)
+  for (let i = 0; i < allCharacters.length; i++) {
+    password += allCharacters.toString(
+      Math.floor(Math.random() * allCharacters.length)
     );
   }
-  return password;
 }
 
-// Function to generate password with user input
-function generatePassword() {}
+// Arguments object created and assigned keys to each array value
+const arguments = {
+  lower: lowerCasedCharacters,
+  upper: upperCasedCharacters,
+  number: numericCharacters,
+  symbol: specialCharacters,
+};
+
+// FUNCTION TO GENERATE PASSWORD WITH USER INPUT
+function generatePassword(arguments) {
+  // variable to store generated password
+  let password = "";
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
