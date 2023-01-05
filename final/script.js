@@ -90,6 +90,9 @@ var upperCasedCharacters = [
 
 // FUNCTION TO PROMPT USER FOR PASSWORD OPTIONS
 
+// use window prompts to ask questions for numbers, upper case, lower case and symbols, and then add conditions after
+// window prompts have to have boolean values as conditions
+
 // define an object containing all password parameters
 const passwordParameters = {
   characters: {
