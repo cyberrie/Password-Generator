@@ -1,5 +1,5 @@
 // Array of special characters to be included in password
-var specialCharacters = [
+let specialCharacters = [
   "@",
   "%",
   "+",
@@ -26,10 +26,10 @@ var specialCharacters = [
 ];
 
 // Array of numeric characters to be included in password
-var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+let numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
+let lowerCasedCharacters = [
   "a",
   "b",
   "c",
@@ -59,7 +59,7 @@ var lowerCasedCharacters = [
 ];
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
+let upperCasedCharacters = [
   "A",
   "B",
   "C",
@@ -88,95 +88,57 @@ var upperCasedCharacters = [
   "Z",
 ];
 
-// FUNCTION TO PROMPT USER FOR PASSWORD OPTIONS
-
-// use window prompts to ask questions for numbers, upper case, lower case and symbols, and then add conditions after
-// window prompts have to have boolean values as conditions
-
-// define an object containing all password parameters for later on when adding conditions to prompts
-const passwordParameters = {
-  characters: {
-    hasNum: true,
-    hasUpperCase: true,
-    hasLowerCase: true,
-    hasSymbol: true,
-  },
-};
-
-let passwordLen;
-
+// Function to prompt user for password options
 function getPasswordOptions() {
-  // password initialized a an empty string
-  let password = "";
+  const passOptions = {};
 
-  // get the desired password length from the user
-  let passwordLength = prompt("Enter the desired password length:");
-
-  // get the desired password options from the user
-  let includeSpecialCharacters = confirm(
-    "Select OK to include special characters in the password"
-  );
-  let includeUpperCaseLetters = confirm(
-    "Select OK to include uppercase letters in the password"
-  );
-  let includeLowerCaseLetters = confirm(
-    "Select OK to include lowercase letters in the password"
-  );
-  let includeSpecialCharacteers = confirm(
-    "Select OK to include numbers in the password"
-  );
-
-  // for loop to generate the password
-
-  for (let i = 0; i < passwordLength; i++) {
-    getRandom(numericCharacters);
-  }
+  passOptions.length = prompt("Enter Password Length (10-64):");
+  passOptions.lowercase = confirm();
+  passOptions.upperrcase = confirm;
+  passOptions.numeric = confirm;
 }
 
-// FUNCTION FOR GETTING A RANDOM ELEMENT FROM AN ARRAY
-// separate loop for numeric arrays
-// separate loop for characters arrays: concatenate all arrays with letters/characters (special characters, uppercase, lowercase)
-
-let charArrays = [
-  specialCharacters,
-  lowerCasedCharacters,
-  upperCasedCharacters,
-];
-
+// Function from getting a random element from an array
 function getRandom(arr) {
-  let randomElement = "";
-
-  for (let i = 0; i < arr.length; i++) {
-    // if looping through a numbers array
-    if (arr === numericCharacters) {
-      randomElement = Math.floor(Math.random() * numericCharacters.length);
-      // if looping through a character/letter array
-    } else {
-      randomElement =
-        charArrays[i][Math.floor(Math.random() * charArrays[i].length)];
-    }
-    return randomElement;
-  }
+  let randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
 }
-
-// log into the console to check if it's working
-console.log(getRandom(charArrays[0]));
-console.log(getRandom(charArrays[1]));
-console.log(getRandom(charArrays[2]));
-console.log(getRandom(numericCharacters));
-
-// Arguments object created and assigned keys to each array value
-const arguments = {
-  lower: lowerCasedCharacters,
-  upper: upperCasedCharacters,
-  number: numericCharacters,
-  symbol: specialCharacters,
-};
 
 // FUNCTION TO GENERATE PASSWORD WITH USER INPUT
-function generatePassword(arguments) {
-  // variable to store generated password
-  let password = "";
+// generate password runs when we click on generate button
+
+let bigArray = [];
+let generatedPassword = "";
+function generatePassword() {
+  // storing password options into a new variable
+  const passwordOptions = getPasswordOptions();
+
+  // Make an array containing all selected options
+  if (passwordOptions.lowercase) {
+    bigArray = bigArray.concat(lowerCasedCharacters);
+  }
+
+  if (passwordOptions.upperrcase) {
+    bigArray = bigArray.concat(upperCasedCharacters);
+  }
+
+  if (passwordOptions.numeric) {
+    bigArray = bigArray.concat(numericCharacters);
+  }
+
+  if (passwordOptions.concat) {
+    bigArray = bigArray.concat(specialCharacters);
+  }
+
+  // choose a random character from the bigArray based on the length user selected
+  for (let i = 0; i < parseInt(passwordOptions.length); i++) {
+    generatePassword += getRandom(bigArray);
+  }
+  console.log("Generated Password:", generatedPassword);
+  console.log(bigArray);
+  console.log(passwordOptions);
+
+  return generatedPassword;
 }
 
 // Get references to the #generate element
