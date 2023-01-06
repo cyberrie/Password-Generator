@@ -93,7 +93,7 @@ var upperCasedCharacters = [
 // use window prompts to ask questions for numbers, upper case, lower case and symbols, and then add conditions after
 // window prompts have to have boolean values as conditions
 
-// define an object containing all password parameters
+// define an object containing all password parameters for later on when adding conditions to prompts
 const passwordParameters = {
   characters: {
     hasNum: true,
@@ -106,30 +106,64 @@ const passwordParameters = {
 let passwordLen;
 
 function getPasswordOptions() {
-  if ((passwordParameters = true && passwordLen >= 10 && passwordLen <= 64)) {
-    generatePassword();
-  } else {
-    console.log(
-      "Your password has to have at least one type of each: number, special character, upper case and lower case. Please try again"
-    );
+  // password initialized a an empty string
+  let password = "";
+
+  // get the desired password length from the user
+  let passwordLength = prompt("Enter the desired password length:");
+
+  // get the desired password options from the user
+  let includeSpecialCharacters = confirm(
+    "Select OK to include special characters in the password"
+  );
+  let includeUpperCaseLetters = confirm(
+    "Select OK to include uppercase letters in the password"
+  );
+  let includeLowerCaseLetters = confirm(
+    "Select OK to include lowercase letters in the password"
+  );
+  let includeSpecialCharacteers = confirm(
+    "Select OK to include numbers in the password"
+  );
+
+  // for loop to generate the password
+
+  for (let i = 0; i < passwordLength; i++) {
+    getRandom(numericCharacters);
   }
 }
 
 // FUNCTION FOR GETTING A RANDOM ELEMENT FROM AN ARRAY
+// separate loop for numeric arrays
+// separate loop for characters arrays: concatenate all arrays with letters/characters (special characters, uppercase, lowercase)
+
+let charArrays = [
+  specialCharacters,
+  lowerCasedCharacters,
+  upperCasedCharacters,
+];
+
 function getRandom(arr) {
-  // concatenate all arrays
-  let allCharacters = specialCharacters.concat(
-    numericCharacters,
-    lowerCasedCharacters,
-    upperCasedCharacters
-  );
-  // iterating through all arrays and getting a random element from all arrays
-  for (let i = 0; i < allCharacters.length; i++) {
-    password += allCharacters.toString(
-      Math.floor(Math.random() * allCharacters.length)
-    );
+  let randomElement = "";
+
+  for (let i = 0; i < arr.length; i++) {
+    // if looping through a numbers array
+    if (arr === numericCharacters) {
+      randomElement = Math.floor(Math.random() * numericCharacters.length);
+      // if looping through a character/letter array
+    } else {
+      randomElement =
+        charArrays[i][Math.floor(Math.random() * charArrays[i].length)];
+    }
+    return randomElement;
   }
 }
+
+// log into the console to check if it's working
+console.log(getRandom(charArrays[0]));
+console.log(getRandom(charArrays[1]));
+console.log(getRandom(charArrays[2]));
+console.log(getRandom(numericCharacters));
 
 // Arguments object created and assigned keys to each array value
 const arguments = {
