@@ -13,8 +13,8 @@ body,
 }
 
 body {
-  font-family: sans-serif;
-  background-color: #f9fbfd;
+  font-family: monospace, sans-serif;
+  background: linear-gradient(180deg, #212529, #343a40, #495057);
 }
 
 .wrapper {
@@ -26,27 +26,39 @@ body {
 header {
   text-align: center;
   padding: 20px;
+  font-size: 1.5rem;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: #f1f3f5;
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
+  background: linear-gradient(
+    to top right,
+    #f8f9fa,
+    #f1f3f5,
+    #e7e9eb,
+    #d3d7dc,
+    #b6babd
+  );
+  border-radius: 10px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
-  font-size: 18px;
+  color: #343a40;
+  font-size: 1.3rem;
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
+}
+
+#password {
+  background-color: whitesmoke;
 }
 
 .card-header::after {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: #212529;
   height: 2px;
 }
 
@@ -62,7 +74,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: #212529;
   height: 2px;
 }
 
@@ -74,22 +86,32 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
-  border-radius: 25px;
+  background: linear-gradient(
+    to top right,
+    rgb(128, 7, 7),
+    rgb(129, 6, 6),
+    rgb(157, 7, 7)
+  );
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
-  color: hsl(0, 0%, 100%);
+  color: #f1f3f5;
+  font-family: monospace, sans-serif;
   display: inline-block;
-  font-size: 22px;
+  font-size: 26px;
   line-height: 22px;
   margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
+  padding: 18px 32px;
   text-align: center;
   cursor: pointer;
 }
 
+#generate:hover {
+  box-shadow: inset 0 0 10px #33322f;
+}
+
 button[disabled] {
-  cursor: default;
+  cursor: pointer;
   background: #c0c7cf;
 }
 
@@ -112,8 +134,8 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
+  border: 2px dashed #868e96;
+  border-radius: 8px;
   resize: none;
   overflow: hidden;
 }

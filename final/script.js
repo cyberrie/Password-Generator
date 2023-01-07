@@ -125,7 +125,7 @@ let generatedPassword = "";
 // This function runs when the user clicks on generate button
 function generatePassword() {
   // set the generatedPassword to an empty string so it resets each time the button Generate Password is clicked
-  // generatedPassword = "";
+  generatedPassword = "";
   // new array to store the chose password characters
   let bigArray = [];
   // Storing password options function into a new variable
