@@ -55,7 +55,7 @@
 
 The following animation shows my web aplication's appearance:
 
-![Password Generator](image)
+![Password Generator](./assets/password-generator.png)
 
 ## Links
 
