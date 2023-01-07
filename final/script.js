@@ -92,12 +92,22 @@ let upperCasedCharacters = [
 function getPasswordOptions() {
   // object storing all the options inside the function
   let options = {};
-  // store options into variables
-  options.length = prompt("Enter Password Length (10-64):");
+
+  // While loop to prompt the user for the password length until it is valid
+  while (true) {
+    options.length = prompt("Enter Password Length (10-64):");
+    if (options.length >= 10 && options.length <= 64) {
+      break;
+    } else {
+      alert("Error: Password must be between 10 and 64 characters.");
+    }
+  }
+  // Store options into variables
   options.lower = confirm("Do you want to include Lowercase Characters?");
   options.upper = confirm("Do you want to include Uppercase Characters?");
   options.numeric = confirm("Do you want to include Numbers?");
   options.special = confirm("Do you want to include Special Characters?");
+  // Return the password options
   return options;
 }
 
@@ -110,7 +120,6 @@ function getRandom(arr) {
 // testing getRandom with different arrays
 console.log(getRandom(numericCharacters));
 
-let generatedPassword = "";
 // Function to generate password with user input
 // generate password runs when we click on generate button
 function generatePassword() {
@@ -138,6 +147,8 @@ function generatePassword() {
 
   // Choose a random character from the bigArray based on the length user selected
   for (let i = 0; i < parseInt(passwordOptions.length); i++) {
+    // New variable for generated password
+    let generatedPassword = "";
     generatedPassword += getRandom(bigArray);
   }
   console.log(generatedPassword, "Password Length", generatedPassword.length);
