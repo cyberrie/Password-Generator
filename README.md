@@ -63,8 +63,6 @@ You will be able to acces the app URL if you navigate into Settings → Pages in
 
 Or, click on this link: [Password Generator](link)
 
-## My Process
-
 ## Built with...
 
 - HTML
@@ -73,9 +71,25 @@ Or, click on this link: [Password Generator](link)
 
 ## What I learned
 
+- Focus was on JavaScript functions recap
+
+- I've learned that console and DevTools are my best friends when working with JS
+
+- Key takeaways from this project, along challenges encountered:
+
+  - If executed function is resulting in 'undefined' always check if it was returned! Challenge: I had an issue with calling a nested function within the main function - for some reason object arrays from password options functions was not returnng any values when ran in the main function.
+
 ## Useful Resources
 
-- [Bootstrap Documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/) - Essential for this project.
+- [JavaScript Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+
+- [JavaScript Loops & Iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+
+- [JavaScript Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+
+- [Document.querySelector() - Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+
+- [Document.getElementById() - Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
 
 ## Author
 
@@ -85,4 +99,4 @@ Or, click on this link: [Password Generator](link)
 
 ## Acknowledgments
 
-🌟
+🌟 Big thanks to my fellow Developer Warren and my tutor Alistair for answering some of the questions I had when completing this project.
