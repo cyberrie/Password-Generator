@@ -88,27 +88,26 @@ let upperCasedCharacters = [
   "Z",
 ];
 
-// Function to prompt user for password options
+// Function to prompt user for password options & conditional while loop included when the generator worked with all conditions 'true'
 function getPasswordOptions() {
-  // object storing all the options inside the function
-  let options = {};
+  // Object storing all the options inside the function
+  let passOptions = {};
 
-  // While loop to prompt the user for the password length until it is valid
   while (true) {
-    options.length = prompt("Enter Password Length (10-64):");
-    if (options.length >= 10 && options.length <= 64) {
+    passOptions.length = prompt("Enter Password Length (10-64):");
+    if (passOptions.length >= 10 && passOptions.length <= 64) {
       break;
     } else {
-      alert("Error: Password must be between 10 and 64 characters.");
+      alert("Error: Passwowrd must be between 10 and 64 characters.");
     }
   }
   // Store options into variables
-  options.lower = confirm("Do you want to include Lowercase Characters?");
-  options.upper = confirm("Do you want to include Uppercase Characters?");
-  options.numeric = confirm("Do you want to include Numbers?");
-  options.special = confirm("Do you want to include Special Characters?");
-  // Return the password options
-  return options;
+
+  passOptions.lower = confirm("Do you want to include Lowercase Characters?");
+  passOptions.upper = confirm("Do you want to include Uppercase Characters?");
+  passOptions.numeric = confirm("Do you want to include Numbers?");
+  passOptions.special = confirm("Do you want to include Special Characters?");
+  return passOptions;
 }
 
 // Function from getting a random element from an array
@@ -120,6 +119,8 @@ function getRandom(arr) {
 // testing getRandom with different arrays
 console.log(getRandom(numericCharacters));
 
+// New variable for generated password
+let generatedPassword = "";
 // Function to generate password with user input
 // generate password runs when we click on generate button
 function generatePassword() {
@@ -128,8 +129,19 @@ function generatePassword() {
   // Storing password options function into a new variable
   const passwordOptions = getPasswordOptions();
 
-  // Create an array containing all selected options
+  // Check if at least one character type is selected
+  if (
+    !passwordOptions.lower &&
+    !passwordOptions.upper &&
+    !passwordOptions.numeric &&
+    !passwordOptions.special
+  ) {
+    alert("Error: You must select at least one character type.");
+    return; // after this the password returns undefined - am I able to reset the circle on pression ok?
+  }
+
   if (passwordOptions.lower) {
+    // Create an array containing all selected options
     bigArray = bigArray.concat(lowerCasedCharacters);
   }
 
@@ -147,8 +159,6 @@ function generatePassword() {
 
   // Choose a random character from the bigArray based on the length user selected
   for (let i = 0; i < parseInt(passwordOptions.length); i++) {
-    // New variable for generated password
-    let generatedPassword = "";
     generatedPassword += getRandom(bigArray);
   }
   console.log(generatedPassword, "Password Length", generatedPassword.length);
