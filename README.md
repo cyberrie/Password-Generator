@@ -1,79 +1,88 @@
-# Module 5 Challenge: Password Generator
+# Random Password Generator
+
+## Table of contents
+
+- [Overview](#overview)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Portfolio Demo](#portfolio-demo)
+- [Links](#links)
+- [My process](#my-process)
+- [Built with](#built-with)
+- [What I learned](#what-i-learned)
+- [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 ## Overview
- 
-This week’s challenge requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
+- This application was built to consolidate JavaScript skills I have learned so far - it enables an employee to generate a random password based on criteria they’ve selected.
 
-## Instructions
+- This app runs in the browser, and features dynamically updated HTML and CSS powered by JavaScript code.
 
-The following image shows the web application's appearance and functionality:
+- It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
 
-![password generator demo](./assets/05-javascript-challenge-demo.png)
+- HTML and CSS have been included in a starter code but re-styled according to the client's preferences
 
+## Acceptance Criteria
 
-* Generate a password when the button is clicked
-  * Present a series of prompts for password criteria
-    * Length of password
-      * At least 10 characters but no more than 64.
-    * Character types
-      * Lowercase
-      * Uppercase
-      * Numeric
-      * Special characters ($@%&*, etc)
-  * Code should validate for each input and at least one character type should be selected
-  * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
+- Generate a password when the button is clicked
 
-## Grading Requirements
+  - Present a series of prompts for password criteria
 
-This challenge is graded based on the following criteria: 
+    - Length of password
+      - At least 10 characters but no more than 64.
+    - Character types
+      - Lowercase
+      - Uppercase
+      - Numeric
+      - Special characters ($@%&\*, etc)
 
-### Technical Acceptance Criteria: 40%
+  - Code should validate for each input and at least one character type should be selected
 
-* Satisfies all of the above acceptance criteria plus the following:
+  - Once prompts are answered then the password should be generated and displayed in an alert or written to the page
 
-  * The challenge should not produce any errors in the console when you inspect it using Chrome DevTools.
+#### Additional Technical Acceptance and Quality Criteria
 
-### Deployment: 32%
+- The app should not produce any errors in the console when inspected using Chrome DevTools.
 
-* Application deployed at live URL.
+- Application user experience is intuitive and easy to navigate.
 
-* Application loads with no errors.
+- Application user interface style is clean and polished.
 
-* Application GitHub URL submitted.
+- Application resembles the mock-up functionality provided in the challenge instructions.
 
-* GitHub repository that contains application code.
+## Application Screenshot
 
-### Application Quality: 15%
+The following animation shows my web aplication's appearance:
 
-* Application user experience is intuitive and easy to navigate.
+![Password Generator](image)
 
-* Application user interface style is clean and polished.
+## Links
 
-* Application resembles the mock-up functionality provided in the challenge instructions.
+You will be able to acces the app URL if you navigate into Settings → Pages inside this repository.
 
-### Repository Quality: 13%
+Or, click on this link: [Password Generator](link)
 
-* Repository has a unique name.
+## My Process
 
-* Repository follows best practices for file structure and naming conventions.
+## Built with...
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+- HTML
+- CSS
+- JavaScript
 
-* Repository contains multiple descriptive commit messages.
+## What I learned
 
-* Repository contains quality README file with description, screenshot, and link to deployed application.
+## Useful Resources
 
+- [Bootstrap Documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/) - Essential for this project.
 
-## Review
+## Author
 
-You are required to submit the following for review:
+©️ Helena Gilja
 
-* The URL of the deployed application.
+- GitHub - [cyberrie](https://github.com/cyberrie)
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+## Acknowledgments
 
----
-
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+🌟
