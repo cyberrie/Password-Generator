@@ -90,12 +90,15 @@ let upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  const passOptions = {};
-
-  passOptions.length = prompt("Enter Password Length (10-64):");
-  passOptions.lowercase = confirm();
-  passOptions.upperrcase = confirm;
-  passOptions.numeric = confirm;
+  // object storing all the options inside the function
+  let options = {};
+  // store options into variables
+  options.length = prompt("Enter Password Length (10-64):");
+  options.lower = confirm("Do you want to include Lowercase Characters?");
+  options.upper = confirm("Do you want to include Uppercase Characters?");
+  options.numeric = confirm("Do you want to include Numbers?");
+  options.special = confirm("Do you want to include Special Characters?");
+  return options;
 }
 
 // Function from getting a random element from an array
@@ -104,21 +107,24 @@ function getRandom(arr) {
   return arr[randomIndex];
 }
 
-// FUNCTION TO GENERATE PASSWORD WITH USER INPUT
-// generate password runs when we click on generate button
+// testing getRandom with different arrays
+console.log(getRandom(numericCharacters));
 
-let bigArray = [];
 let generatedPassword = "";
+// Function to generate password with user input
+// generate password runs when we click on generate button
 function generatePassword() {
-  // storing password options into a new variable
+  // new array to store the chose password characters
+  let bigArray = [];
+  // Storing password options function into a new variable
   const passwordOptions = getPasswordOptions();
 
-  // Make an array containing all selected options
-  if (passwordOptions.lowercase) {
+  // Create an array containing all selected options
+  if (passwordOptions.lower) {
     bigArray = bigArray.concat(lowerCasedCharacters);
   }
 
-  if (passwordOptions.upperrcase) {
+  if (passwordOptions.upper) {
     bigArray = bigArray.concat(upperCasedCharacters);
   }
 
@@ -126,18 +132,15 @@ function generatePassword() {
     bigArray = bigArray.concat(numericCharacters);
   }
 
-  if (passwordOptions.concat) {
+  if (passwordOptions.special) {
     bigArray = bigArray.concat(specialCharacters);
   }
 
-  // choose a random character from the bigArray based on the length user selected
+  // Choose a random character from the bigArray based on the length user selected
   for (let i = 0; i < parseInt(passwordOptions.length); i++) {
-    generatePassword += getRandom(bigArray);
+    generatedPassword += getRandom(bigArray);
   }
-  console.log("Generated Password:", generatedPassword);
-  console.log(bigArray);
-  console.log(passwordOptions);
-
+  console.log(generatedPassword, "Password Length", generatedPassword.length);
   return generatedPassword;
 }
 
@@ -148,7 +151,6 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
 
