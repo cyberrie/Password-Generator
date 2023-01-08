@@ -138,7 +138,7 @@ function generatePassword() {
     !passwordOptions.special
   ) {
     alert("Error: You must select AT LEAST ONE character type.");
-    return; // this returns undefined when runs until the end, but if I return getPasswordOptions I then get an object as a result when all parameters followed.
+    return "Try Again!"; // this returns undefined when runs until the end, but if I return getPasswordOptions() I then get an object as a result when all parameters followed.
   }
 
   if (passwordOptions.lower) {
