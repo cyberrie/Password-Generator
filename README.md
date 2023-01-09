@@ -15,11 +15,11 @@
 
 ## Overview
 
-- This application was built to consolidate JavaScript skills I have learned so far - it enables an employee to generate a random password based on criteria they’ve selected
+- This application was built to consolidate JavaScript skills I have learned so far - it enables the user to generate a random password based on criteria they’ve selected
 
 - This app runs in the browser, and features dynamically updated HTML and CSS powered by JavaScript code
 
-- It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes
+- It has a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes
 
 - HTML and CSS have been included in a starter code but re-styled according to the client's preferences
 
@@ -73,11 +73,13 @@ The following animation shows my web aplication's appearance:
 
 - Focus was on JavaScript functions recap
 
-- I've learned that console and DevTools are my best friends when working with JS
+- I've learned that console and DevTools are my best friends when working with JavaScript
 
-- Key takeaways from this project, along challenges encountered:
+- Key takeaways from this project, based on some challenges encoutered:
 
-  - If executed function is resulting in 'undefined' always check if it was returned! Challenge: I had an issue with calling a nested function within the main function - for some reason object arrays from password options functions was not returnng any values when ran in the main function.
+  - Always check if the function was correctly returned! Challenge: I had an issue with calling a nested function within the main function - passOptions object from password options functions was not returning any values when ran in the main function, despite correctly accessed, because my getPasswordOptions function was not returned. Resolved with the debugger
+
+  - On each function execution, my password textarea was stacking newly generated password. Again, with the debugger, I have noticed that the function does not fgo over an empty password variable as it was declared globally, s moved it inside the function
 
 ## Useful Resources
 
