@@ -119,13 +119,11 @@ function getRandom(arr) {
 // testing getRandom with different arrays
 // console.log(getRandom(numericCharacters));
 
-// New variable for generated password
-let generatedPassword = "";
 // Function to generate password with user input
 // This function runs when the user clicks on generate button
 function generatePassword() {
-  // set the generatedPassword to an empty string so it resets each time the button Generate Password is clicked
-  generatedPassword = "";
+  // new variable for generatedPassword set the generatedPassword to an empty string so it resets each time the button Generate Password is clicked
+  let generatedPassword = "";
   // new array to store the chose password characters
   let bigArray = [];
   // Storing password options function into a new variable
@@ -137,8 +135,7 @@ function generatePassword() {
     !passwordOptions.numeric &&
     !passwordOptions.special
   ) {
-    alert("Error: You must select AT LEAST ONE character type.");
-    return "Try Again!"; // this returns undefined when runs until the end, but if I return getPasswordOptions() I then get an object as a result when all parameters followed.
+    return "Error: You must select AT LEAST ONE character type.";
   }
 
   if (passwordOptions.lower) {
