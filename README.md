@@ -61,7 +61,7 @@ The following animation shows my web aplication's appearance:
 
 - You will be able to acces the app URL if you navigate into Settings → Pages inside this repository
 
-Or, click on this link: [Password Generator](link)
+- Or, click on this link: [Password Generator](https://cyberrie.github.io/Password-Generator/)
 
 ## Built with...
 
