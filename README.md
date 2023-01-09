@@ -6,7 +6,6 @@
 - [Acceptance Criteria](#acceptance-criteria)
 - [Application Screenshot](#application-screenshot)
 - [Links](#links)
-- [My process](#my-process)
 - [Built with](#built-with)
 - [What I learned](#what-i-learned)
 - [Useful resources](#useful-resources)
