@@ -15,11 +15,11 @@
 
 ## Overview
 
-- This application was built to consolidate JavaScript skills I have learned so far - it enables an employee to generate a random password based on criteria they’ve selected.
+- This application was built to consolidate JavaScript skills I have learned so far - it enables an employee to generate a random password based on criteria they’ve selected
 
-- This app runs in the browser, and features dynamically updated HTML and CSS powered by JavaScript code.
+- This app runs in the browser, and features dynamically updated HTML and CSS powered by JavaScript code
 
-- It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+- It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes
 
 - HTML and CSS have been included in a starter code but re-styled according to the client's preferences
 
@@ -30,7 +30,9 @@
   - Present a series of prompts for password criteria
 
     - Length of password
-      - At least 10 characters but no more than 64.
+
+      - At least 10 characters but no more than 64
+
     - Character types
       - Lowercase
       - Uppercase
@@ -43,13 +45,11 @@
 
 #### Additional Technical Acceptance and Quality Criteria
 
-- The app should not produce any errors in the console when inspected using Chrome DevTools.
+- The app should not produce any errors in the console when inspected using Chrome DevTools
 
-- Application user experience is intuitive and easy to navigate.
+- Application user experience is intuitive and easy to navigate
 
-- Application user interface style is clean and polished.
-
-- Application resembles the mock-up functionality provided in the challenge instructions.
+- Application user interface style is clean and polished
 
 ## Application Screenshot
 
@@ -59,7 +59,7 @@ The following animation shows my web aplication's appearance:
 
 ## Links
 
-You will be able to acces the app URL if you navigate into Settings → Pages inside this repository.
+- You will be able to acces the app URL if you navigate into Settings → Pages inside this repository
 
 Or, click on this link: [Password Generator](link)
 
