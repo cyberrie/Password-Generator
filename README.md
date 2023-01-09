@@ -4,7 +4,7 @@
 
 - [Overview](#overview)
 - [Acceptance Criteria](#acceptance-criteria)
-- [Portfolio Demo](#portfolio-demo)
+- [Application Screenshot](#application-screenshot)
 - [Links](#links)
 - [My process](#my-process)
 - [Built with](#built-with)
