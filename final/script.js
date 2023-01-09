@@ -122,13 +122,14 @@ function getRandom(arr) {
 // Function to generate password with user input
 // This function runs when the user clicks on generate button
 function generatePassword() {
-  // new variable for generatedPassword set the generatedPassword to an empty string so it resets each time the button Generate Password is clicked
+  // new variable for generatedPassword set to an empty string inside the function, so it resets textarea every time the button Generate Password is clicked
   let generatedPassword = "";
   // new array to store the chose password characters
   let bigArray = [];
   // Storing password options function into a new variable
   const passwordOptions = getPasswordOptions();
 
+  // this is to check character parameters
   if (
     !passwordOptions.lower &&
     !passwordOptions.upper &&
@@ -141,7 +142,7 @@ function generatePassword() {
   I have also attempted while loop with Object.values(characterOptions).includes(true) in getPasswordOptions function and it also worked, but again string returned*/
 
   if (passwordOptions.lower) {
-    // Create an array containing all selected options
+    // Create an array containing all selected options and concatenate further selected accordingly
     bigArray = bigArray.concat(lowerCasedCharacters);
   }
 
