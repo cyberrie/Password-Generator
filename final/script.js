@@ -135,8 +135,10 @@ function generatePassword() {
     !passwordOptions.numeric &&
     !passwordOptions.special
   ) {
-    return "Error: You must select AT LEAST ONE character type.";
+    return "Error: You must select AT LEAST ONE character type."; // this returns a string and the user has to Generate Password again to restart the process. Hope this is ok functionality wise, no indication was given wheter this should re-execute the function utomatically
   }
+  /* P.S. I have attempted to return generatePassword function in the above conditionals, however this then returns double string, one of which is the actual password correctly generated (from 2nd execution, when at least one Boolean = true) and the concatenation is undefined*password length chosen by the user in the first execution when Booleans were all false.. I guess this is as it goes over to an empty array and stores undefined values 
+  I have also attempted while loop with Object.values(characterOptions).includes(true) in getPasswordOptions function and it also worked, but again string returned*/
 
   if (passwordOptions.lower) {
     // Create an array containing all selected options
