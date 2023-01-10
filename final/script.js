@@ -108,7 +108,7 @@ function getPasswordOptions() {
     passOptions.length = prompt("Enter Password Length (10-64):");
   }
 
-  // Store options into variables
+  // Store options into variables, wrapped into while loop to check for character parameters
   while (true) {
     passOptions.lower = confirm("Do you want to include Lowercase Characters?");
     passOptions.upper = confirm("Do you want to include Uppercase Characters?");
